@@ -1,14 +1,14 @@
 {
+  "private": true,
   "name": "bona-petit-site",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
+    "dev": "next dev",
     "format:fix": "npx prettier --write .",
-    "format:package": "prettier-package-json --write"
+    "format:package": "prettier-package-json --write",
+    "lint": "next lint",
+    "start": "next start"
   },
   "dependencies": {
     "@types/node": "18.16.2",
