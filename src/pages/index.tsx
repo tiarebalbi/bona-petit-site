@@ -1,5 +1,7 @@
-import { Head } from 'next/document';
+import Head from 'next/head';
 import Image from 'next/image';
+
+import React from 'react';
 
 import image from '../../public/logo-black.png';
 
