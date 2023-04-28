@@ -1,0 +1,26 @@
+{
+  "tailwindConfig": "./tailwind.config.js",
+  "semi": true,
+  "singleQuote": true,
+  "jsxSingleQuote": false,
+  "tabWidth": 2,
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "importOrder": [
+    "^lodash(.*)$",
+    "^react(.*)$",
+    "^rooks(.*)$",
+    "^swiper(.*)$",
+    "^@supercharge/(.*)$",
+    "^@tanstack/(.*)$",
+    "^@antd/(.*)$",
+    "^@headlessui/(.*)$",
+    "^@heroicons/(.*)$",
+    "^@scale-ai/(.*)$",
+    "^@app/(.*)$",
+    "^@modules/(.*)$",
+    "^@platform/(.*)$",
+    "^(.*).css",
+    "^[./]"
+  ]
+}
