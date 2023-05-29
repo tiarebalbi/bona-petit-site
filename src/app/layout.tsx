@@ -1,3 +1,5 @@
+import { Analytics } from '@vercel/analytics/react';
+
 import React from 'react';
 
 import { Nunito_Sans } from 'next/font/google';
@@ -28,6 +30,7 @@ export default function RootLayout({ children, banner }: RootLayoutProps) {
           <div className={style.banner}>{banner}</div>
         </header>
       </body>
+      <Analytics />
     </html>
   );
 }
