@@ -10,15 +10,14 @@
     "^lodash(.*)$",
     "^react(.*)$",
     "^rooks(.*)$",
+    "^next(.*)$",
     "^swiper(.*)$",
     "^@supercharge/(.*)$",
     "^@tanstack/(.*)$",
     "^@antd/(.*)$",
     "^@headlessui/(.*)$",
     "^@heroicons/(.*)$",
-    "^@app/(.*)$",
-    "^@modules/(.*)$",
-    "^@platform/(.*)$",
+    "^@/app/(.*)$",
     "^(.*).css",
     "^[./]"
   ]

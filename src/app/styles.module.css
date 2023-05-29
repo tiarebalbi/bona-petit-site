@@ -1,0 +1,7 @@
+.header {
+  @apply relative z-30 text-primary-50;
+}
+
+.banner {
+  @apply pt-[90px] z-0 relative top-0 bottom-0 bg-primary-400 h-full;
+}
