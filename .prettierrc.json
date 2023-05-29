@@ -16,7 +16,6 @@
     "^@antd/(.*)$",
     "^@headlessui/(.*)$",
     "^@heroicons/(.*)$",
-    "^@scale-ai/(.*)$",
     "^@app/(.*)$",
     "^@modules/(.*)$",
     "^@platform/(.*)$",
