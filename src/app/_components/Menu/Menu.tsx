@@ -1,6 +1,11 @@
 'use client';
 
+import classNames from 'classnames';
+
 import { useState } from 'react';
+
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 import { Dialog } from '@headlessui/react';
 
@@ -12,6 +17,7 @@ import {
 
 const Menu = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <div
@@ -20,10 +26,10 @@ const Menu = () => {
     >
       <nav className="px-12 lg:px-0 h-[90px] container mx-auto max-w-7xl flex items-center justify-between">
         <div className="flex lg:flex-1">
-          <a href="#">
+          <Link href="/">
             <span className="sr-only">Bona Petit</span>
             <span>Logo here</span>
-          </a>
+          </Link>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -36,21 +42,61 @@ const Menu = () => {
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
-          <a
-            href="#"
-            className="text-sm font-semibold leading-6 text-primary-300"
+          <Link
+            href="/"
+            className={classNames(
+              'text-sm transition-all duration-200 font-semibold leading-6',
+              {
+                ' text-primary-300': pathname === '/',
+              }
+            )}
           >
             Página Inícial
-          </a>
-          <a href="#" className="text-sm font-semibold leading-6">
+          </Link>
+          <Link
+            href="/sobre-nos"
+            className={classNames(
+              'text-sm transition-all duration-200 font-semibold leading-6',
+              {
+                ' text-primary-300': pathname === '/sobre-nos',
+              }
+            )}
+          >
             Sobre Nós
-          </a>
-          <a href="#" className="text-sm font-semibold leading-6">
-            Nossos Produtos
-          </a>
-          <a href="#" className="text-sm font-semibold leading-6">
+          </Link>
+          <Link
+            href="/produtos"
+            className={classNames(
+              'text-sm transition-all duration-200 font-semibold leading-6',
+              {
+                ' text-primary-300': pathname === '/produtos',
+              }
+            )}
+          >
+            Produtos
+          </Link>
+          <Link
+            href="/cursos"
+            className={classNames(
+              'text-sm transition-all duration-200 font-semibold leading-6',
+              {
+                ' text-primary-300': pathname === '/cursos',
+              }
+            )}
+          >
+            Cursos
+          </Link>
+          <Link
+            href="/fale-conosco"
+            className={classNames(
+              'text-sm transition-all duration-200 font-semibold leading-6',
+              {
+                ' text-primary-300': pathname === '/fale-conosco',
+              }
+            )}
+          >
             Fale Conosco
-          </a>
+          </Link>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <a href="#" className="text-sm font-semibold leading-6 relative">
               <ShoppingCartIcon width={24} />
@@ -70,10 +116,10 @@ const Menu = () => {
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed z-[120] inset-y-0 right-0 z-10 w-full overflow-y-auto bg-primary-950 text-primary-50 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
+            <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Bona Petit</span>
               <div>Logo aqui</div>
-            </a>
+            </Link>
             <button
               type="button"
               className="-m-2.5 rounded-md p-2.5"
@@ -86,30 +132,61 @@ const Menu = () => {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-primary-200/10">
               <div className="space-y-2 py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7"
+                <Link
+                  href="/"
+                  className={classNames(
+                    '-mx-3 block transition-all duration-200 rounded-lg px-3 py-2 text-base font-semibold leading-7',
+                    {
+                      ' text-primary-300': pathname === '/',
+                    }
+                  )}
                 >
                   Página Inícial
-                </a>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7"
+                </Link>
+                <Link
+                  href="/sobre-nos"
+                  className={classNames(
+                    '-mx-3 block transition-all duration-200 rounded-lg px-3 py-2 text-base font-semibold leading-7',
+                    {
+                      ' text-primary-300': pathname === '/sobre-nos',
+                    }
+                  )}
                 >
                   Sobre Nós
-                </a>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7"
+                </Link>
+                <Link
+                  href="/produtos"
+                  className={classNames(
+                    '-mx-3 block transition-all duration-200 rounded-lg px-3 py-2 text-base font-semibold leading-7',
+                    {
+                      ' text-primary-300': pathname === '/produtos',
+                    }
+                  )}
                 >
                   Produtos
-                </a>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7"
+                </Link>
+                <Link
+                  href="/cursos"
+                  className={classNames(
+                    '-mx-3 block transition-all duration-200 rounded-lg px-3 py-2 text-base font-semibold leading-7',
+                    {
+                      ' text-primary-300': pathname === '/cursos',
+                    }
+                  )}
+                >
+                  Cursos
+                </Link>
+                <Link
+                  href="/fale-conosco"
+                  className={classNames(
+                    '-mx-3 block transition-all duration-200 rounded-lg px-3 py-2 text-base font-semibold leading-7',
+                    {
+                      ' text-primary-300': pathname === '/fale-conosco',
+                    }
+                  )}
                 >
                   Fale Conosco
-                </a>
+                </Link>
               </div>
               <div className="py-6">
                 <a

@@ -3,5 +3,9 @@
 }
 
 .banner {
-  @apply pt-[90px] z-0 relative top-0 bottom-0 bg-primary-400 h-full;
+  @apply relative bottom-0 top-0 z-0 h-full bg-primary-400 pt-[90px];
+}
+
+.main {
+  @apply relative z-10;
 }
