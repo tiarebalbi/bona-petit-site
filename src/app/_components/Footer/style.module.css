@@ -1,0 +1,4 @@
+.main {
+    @apply bg-primary-950 text-primary-300 bg-cover bg-center;
+    background: url("/banner12.jpg");
+}
