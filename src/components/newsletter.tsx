@@ -1,33 +1,59 @@
 'use client';
 
-import { Form, Input } from 'antd';
-import useSWR from 'swr';
+import { Form, Input, notification } from 'antd';
+import useSWRMutation from 'swr/mutation';
 
 import { PaperAirplaneIcon } from '@heroicons/react/24/outline';
+
+import NewsletterFetcher from '@/lib/fetcher/NewsletterFetcher';
 
 type NewsletterForm = {
   email: string;
 };
 
 export default function Newsletter() {
-  const { mutate } = useSWR('/api/newsletter');
+  const { trigger } = useSWRMutation(
+    ['newsletter'],
+    NewsletterFetcher.insertEmail
+  );
 
   const [form] = Form.useForm<NewsletterForm>();
 
-  const registerEmail = (data: NewsletterForm) => {
-    console.log(data);
-    form.validateFields().then(() => {
-      mutate(data).then(() => {
-        console.log('Added');
+  const registerEmail = async (data: NewsletterForm) => {
+    try {
+      await form.validateFields();
+      const response = await trigger(data);
+      const body = await response?.data();
+      if (body?.error) {
+        notification.warning({
+          message: 'Verifique o e-mail informado.',
+          description: body.message,
+        });
+      } else {
+        form.resetFields();
+        notification.success({
+          message: 'Confirmação',
+          description: 'Seu e-mail foi cadastrado com sucesso!',
+        });
+      }
+    } catch (err) {
+      notification.error({
+        message: 'Ocorreu um error interno',
+        description: 'Por favor tente novamente.',
       });
-    });
+    }
   };
 
   return (
     <div className="mt-12">
       <Form form={form} onFinish={registerEmail}>
         <div className="flex space-x-4 items-start justify-between">
-          <Form.Item name="email" rootClassName="flex-grow">
+          <Form.Item
+            name="email"
+            rootClassName="flex-grow"
+            required
+            rules={[{ required: true, message: 'Campo Obrigatório' }]}
+          >
             <Input
               autoComplete="off"
               placeholder="Preencha o seu e-mail"
@@ -35,11 +61,7 @@ export default function Newsletter() {
               type="email"
             />
           </Form.Item>
-          <Form.Item
-            noStyle
-            required
-            rules={[{ required: true, message: 'Campo Obrigatório' }]}
-          >
+          <Form.Item noStyle>
             <button
               type="submit"
               className="rounded-full w-[56px] h-[56px] bg-gradient-to-r from-primary to-primary-600 text-white drop-shadow hover:bg-gradient-to-l transition-all duration-300 flex items-center justify-center"

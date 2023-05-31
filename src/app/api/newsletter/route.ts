@@ -13,14 +13,19 @@ export async function POST(request: Request) {
   const data = await request.json();
 
   try {
-    if (!data.email) {
-      return NextResponse.json({ error: 'E-mail é obrigatório' });
+    if (!data?.email) {
+      return NextResponse.next({
+        status: 400,
+      });
     }
 
     await collection.insertOne({ email: data.email });
 
-    return NextResponse.json({ data: 'OK' });
+    return NextResponse.json({ message: 'OK', error: false });
   } catch (e) {
-    return NextResponse.json({ error: 'E-mail duplicado' });
+    return NextResponse.json({
+      message: 'O e-mail já se encontra cadastrado.',
+      error: true,
+    });
   }
 }
