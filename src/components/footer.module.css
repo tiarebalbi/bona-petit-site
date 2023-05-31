@@ -1,0 +1,17 @@
+.main {
+  @apply bg-primary-950 bg-cover bg-top text-primary-300;
+  background: url('/banner12.jpg');
+}
+
+.footerContainer {
+  @apply relative min-h-[400px];
+}
+
+.overlay {
+  @apply absolute bottom-0 left-0 right-0 top-0 z-0 h-full w-full select-none bg-primary-950/80;
+}
+
+.title {
+  @apply mb-4 w-full pb-4 text-[30px] text-primary before:mr-4 before:border before:border-primary-300;
+  @apply tracking-wide selection:bg-primary selection:text-primary-100;
+}

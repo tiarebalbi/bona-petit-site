@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    poweredByHeader: false,
-}
+  poweredByHeader: false,
+  experimental: {
+    serverActions: true,
+  },
+  compiler: {
+    removeConsole: true,
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
