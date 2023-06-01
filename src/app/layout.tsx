@@ -1,17 +1,21 @@
 import { Analytics } from '@vercel/analytics/react';
+import 'server-only';
 
-import React from 'react';
+import React, { lazy } from 'react';
 
 import { Metadata } from 'next';
 import { Nunito_Sans } from 'next/font/google';
 
-import Footer from '@/components/footer';
 import Menu from '@/components/menu';
+
+import { preload } from '@/lib/user-feedback';
 
 import './globals.css';
 import style from './styles.module.css';
 
 const nunitoSans = Nunito_Sans({ subsets: ['latin'] });
+
+const Footer = lazy(() => import('@/components/footer').then());
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -19,7 +23,17 @@ interface RootLayoutProps {
 }
 
 export const metadata: Metadata = {
-  themeColor: '#96855d',
+  themeColor: '#2c221c',
+  twitter: {
+    title: 'Descubra a Arte da Confeitaria com a Bona Petit!',
+    description:
+      'Explore o delicioso mundo da Bona Petit! Descubra doces requintados criados com o revolucionário Método Milenar de Confeitaria. Cada doce é uma viagem ao coração da tradição e inovação em confeitaria. Venha saborear a arte da confeitaria conosco!',
+  },
+  openGraph: {
+    title: 'Descubra a Arte da Confeitaria com a Bona Petit!',
+    description:
+      'Explore o delicioso mundo da Bona Petit! Descubra doces requintados criados com o revolucionário Método Milenar de Confeitaria. Cada doce é uma viagem ao coração da tradição e inovação em confeitaria. Venha saborear a arte da confeitaria conosco!',
+  },
   keywords: [
     'Bona Petit',
     'Chef Executivo',
@@ -43,7 +57,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children, banner }: RootLayoutProps) {
+export default async function RootLayout({
+  children,
+  banner,
+}: RootLayoutProps) {
+  // Initializing user feedbacks
+  preload();
+
   return (
     <html lang="en">
       <body className={nunitoSans.className}>

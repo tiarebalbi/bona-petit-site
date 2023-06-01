@@ -1,0 +1,19 @@
+.input {
+  @apply h-[50px] w-full border-0 bg-primary-100 text-primary-950 placeholder:text-primary active:hover:focus:border-0 !important;
+  @apply ring-0;
+}
+
+.btn {
+  @apply z-50 block h-[50px] w-full bg-primary-600 uppercase tracking-widest text-primary-100 hover:bg-primary !important;
+  @apply border border-transparent ring-2 ring-primary-600 ring-offset-2 ring-offset-primary-200 !important;
+  @apply transition-all duration-200;
+}
+
+.form {
+  @apply mt-8;
+}
+
+.textarea {
+  @apply h-full w-full border-0 bg-primary-100 text-primary-950 placeholder:text-primary active:hover:focus:border-0 !important;
+  @apply ring-0;
+}

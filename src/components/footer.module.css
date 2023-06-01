@@ -4,7 +4,7 @@
 }
 
 .footerContainer {
-  @apply relative min-h-[400px];
+  @apply relative z-10 min-h-[650px];
 }
 
 .overlay {
@@ -14,4 +14,26 @@
 .title {
   @apply mb-4 w-full pb-4 text-[30px] text-primary before:mr-4 before:border before:border-primary-300;
   @apply tracking-wide selection:bg-primary selection:text-primary-100;
+}
+
+.parceiros {
+  @apply absolute bottom-0 left-0 right-0 z-10 h-[120px] border-b border-y-primary-900 bg-primary-950;
+}
+
+.faleConosco {
+  @apply container relative z-40 mx-auto grid max-w-5xl grid-cols-1 py-12 text-primary-100 lg:grid-cols-2;
+}
+
+.formContainer {
+  @apply mx-12 h-[550px] bg-primary-200 drop-shadow-xl lg:mx-0;
+  @apply rounded-br-3xl rounded-tl-3xl rounded-tr-md p-6 text-primary-900;
+}
+
+.faleContainer {
+  @apply mb-12 flex items-start justify-center overflow-hidden break-all lg:mb-0 lg:items-center lg:justify-start;
+  @apply w-[80%];
+}
+
+.formTitle {
+  @apply mt-8 text-center text-4xl text-primary-950 selection:bg-primary-950 selection:text-primary-200;
 }
