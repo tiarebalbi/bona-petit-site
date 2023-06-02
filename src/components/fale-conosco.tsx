@@ -59,7 +59,11 @@ const FaleConosco = () => {
           className={style.input}
         />
       </Form.Item>
-      <Form.Item name="email">
+      <Form.Item
+        name="email"
+        required
+        rules={[{ required: true, message: 'Campo Obrigatório' }]}
+      >
         <Input type="email" placeholder="E-mail" className={style.input} />
       </Form.Item>
       <Form.Item name="message">
