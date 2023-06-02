@@ -16,7 +16,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ message: 'OK', error: false });
   } catch (e) {
-    console.log(e);
+    console.error('Ocorreu um erro durante o cadastro de newsletter', e);
     return NextResponse.json({
       message: 'O e-mail já se encontra cadastrado.',
       error: true,

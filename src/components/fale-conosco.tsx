@@ -22,7 +22,6 @@ const FaleConosco = () => {
       const response = await trigger(data);
 
       const result = response?.data();
-      console.log(result);
 
       if (result?.error === true) {
         notification.error({
