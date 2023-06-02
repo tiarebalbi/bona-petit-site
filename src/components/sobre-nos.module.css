@@ -1,0 +1,14 @@
+.slogan {
+  @apply text-sm uppercase text-primary;
+}
+
+.title {
+  @apply text-lg text-primary-950;
+}
+
+.container {
+  @apply container mx-auto max-w-7xl;
+}
+
+.content {
+}

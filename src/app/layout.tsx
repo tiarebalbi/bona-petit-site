@@ -30,6 +30,8 @@ export const metadata: Metadata = {
       'Explore o delicioso mundo da Bona Petit! Descubra doces requintados criados com o revolucionário Método Milenar de Confeitaria. Cada doce é uma viagem ao coração da tradição e inovação em confeitaria. Venha saborear a arte da confeitaria conosco!',
   },
   openGraph: {
+    locale: 'pt_BR',
+    type: 'website',
     title: 'Descubra a Arte da Confeitaria com a Bona Petit!',
     description:
       'Explore o delicioso mundo da Bona Petit! Descubra doces requintados criados com o revolucionário Método Milenar de Confeitaria. Cada doce é uma viagem ao coração da tradição e inovação em confeitaria. Venha saborear a arte da confeitaria conosco!',
@@ -55,6 +57,10 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  metadataBase: new URL('https://bona-petit.com'),
+  alternates: {
+    canonical: '/',
+  },
 };
 
 export default async function RootLayout({
@@ -63,7 +69,6 @@ export default async function RootLayout({
 }: RootLayoutProps) {
   // Initializing user feedbacks
   preload();
-
   return (
     <html lang="en">
       <body className={nunitoSans.className}>

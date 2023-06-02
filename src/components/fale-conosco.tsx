@@ -1,13 +1,51 @@
 'use client';
 
-import { Form, Input } from 'antd';
+import { Form, Input, notification } from 'antd';
+import useSWRMutation from 'swr/mutation';
+
+import React from 'react';
+
+import FaleConoscoFetcher from '@/lib/fetcher/FaleConoscoFetcher';
 
 import style from './fale-conosco.module.css';
 
 const FaleConosco = () => {
-  const [form] = Form.useForm();
+  const [form] = Form.useForm<any>();
+  const { trigger } = useSWRMutation(
+    ['fale-conosco'],
+    FaleConoscoFetcher.saveFaleConosco
+  );
+
+  const onSubmit = async (data: any) => {
+    try {
+      await form.validateFields();
+      const response = await trigger(data);
+
+      const result = response?.data();
+      console.log(result);
+
+      if (result?.error === true) {
+        notification.error({
+          message: 'Confirmação',
+          description: result?.message,
+        });
+      } else {
+        form.resetFields();
+        notification.success({
+          message: 'Confirmação',
+          description: result?.message,
+        });
+      }
+    } catch (er) {}
+  };
+
   return (
-    <Form form={form} rootClassName={style.form} layout="vertical">
+    <Form
+      form={form}
+      onFinish={onSubmit}
+      rootClassName={style.form}
+      layout="vertical"
+    >
       <Form.Item
         name="name"
         required

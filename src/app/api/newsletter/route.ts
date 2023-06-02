@@ -1,13 +1,6 @@
-import { MongoClient } from 'mongodb';
-
 import { NextResponse } from 'next/server';
 
-const client = new MongoClient(`${process.env.MONGODB_URI}`);
-const database = client.db('site');
-const collection = database.collection('newsletter');
-collection
-  .createIndex({ email: 1 }, { unique: true })
-  .then(() => console.log('newsletter.email -> index created'));
+import prisma from '@/lib/prisma';
 
 export async function POST(request: Request) {
   const data = await request.json();
@@ -19,10 +12,11 @@ export async function POST(request: Request) {
       });
     }
 
-    await collection.insertOne({ email: data.email });
+    await prisma.newsletter.create({ data });
 
     return NextResponse.json({ message: 'OK', error: false });
   } catch (e) {
+    console.log(e);
     return NextResponse.json({
       message: 'O e-mail já se encontra cadastrado.',
       error: true,

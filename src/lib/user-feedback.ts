@@ -11,16 +11,20 @@ export const preload = () => {
 let queryCount = 0;
 
 export const getUserFeedback = cache(async () => {
-  const total = await prisma.userFeedback.count();
+  try {
+    const total = await prisma.userFeedback.count();
 
-  const data = await prisma.userFeedback.findMany({
-    where: {
-      status: true,
-    },
-    skip: Math.floor(Math.random() * total),
-    take: 1,
-  });
+    const data = await prisma.userFeedback.findMany({
+      where: {
+        status: true,
+      },
+      skip: Math.floor(Math.random() * total),
+      take: 1,
+    });
 
-  console.log('Total query: ', ++queryCount);
-  return { data: data[0], error: false };
+    console.log('Total query: ', ++queryCount);
+    return { data: data[0], error: false };
+  } catch (e) {
+    return { data: undefined, error: true };
+  }
 });

@@ -20,7 +20,7 @@ const Footer = async () => {
       <div className={style.footerContainer}>
         <div className={style.faleConosco}>
           <div className={style.faleContainer}>
-            <Feedback data={result.data} />
+            {result.data && <Feedback data={result.data} />}
           </div>
           <div className={style.formContainer}>
             <h1

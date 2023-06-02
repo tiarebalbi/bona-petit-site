@@ -19,8 +19,17 @@ model UserFeedback {
 }
 
 model Newsletter {
-  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  id         String  @id @default(auto()) @map("_id") @db.ObjectId
   email      String
-  first_name String
-  last_name  String
+  first_name String?
+  last_name  String?
+}
+
+model FaleConosco {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  email     String
+  phone     String
+  message   String
+  timestamp DateTime @default(now())
 }
