@@ -1,14 +1,29 @@
 .slogan {
-  @apply text-sm uppercase text-primary;
+  @apply mb-2 text-center text-sm uppercase text-primary lg:text-left;
 }
 
 .title {
-  @apply text-lg text-primary-950;
+  @apply mb-8 text-center text-4xl tracking-wide text-primary-950 lg:text-left lg:text-3xl;
 }
 
-.container {
-  @apply container mx-auto max-w-7xl;
+.sobreNos {
+  @apply z-10 py-32 lg:container lg:mx-auto lg:max-w-7xl;
 }
 
 .content {
+  @apply lg:grid lg:grid-cols-2;
+}
+
+.imageContainer {
+  @apply relative h-[120%] w-full shadow-2xl;
+}
+
+.image1 {
+  @apply z-10 mt-[20px] bg-cover bg-top;
+  background-image: url('/image-1.jpg');
+}
+
+.image2 {
+  @apply z-50 -mt-[80px] bg-cover bg-top;
+  background-image: url('/image-2.jpg');
 }

@@ -4,6 +4,7 @@ import classNames from 'classnames';
 
 import { useState } from 'react';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -14,6 +15,8 @@ import {
   ShoppingCartIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline';
+
+import logo from '../../public/logo-bona.png';
 
 const Menu = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -28,7 +31,7 @@ const Menu = () => {
         <div className="flex lg:flex-1">
           <Link href="/">
             <span className="sr-only">Bona Petit</span>
-            <span>Logo here</span>
+            <Image src={logo} alt="Bona Petit" width={120} height={60} />
           </Link>
         </div>
         <div className="flex lg:hidden">

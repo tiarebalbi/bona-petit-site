@@ -1,0 +1,24 @@
+.root {
+  @apply relative min-h-[600px] pb-32 pt-32;
+}
+
+.image {
+  @apply relative z-10 h-[500px] rounded bg-cover bg-top bg-no-repeat shadow-xl;
+  @apply transition-all duration-300 ease-in-out hover:z-50 hover:scale-110;
+}
+
+.produto1 {
+  background-image: url('/produto-1.jpeg');
+}
+
+.produto2 {
+  background-image: url('/produto-2.jpeg');
+}
+
+.produto3 {
+  background-image: url('/produto-3.jpeg');
+}
+
+.mask {
+  @apply absolute h-full w-full transition-all duration-200;
+}

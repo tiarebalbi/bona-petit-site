@@ -43,7 +43,7 @@ const Footer = async () => {
               >
                 Sobre Nós
               </h1>
-              <p className="prose-md text-primary-100">
+              <p className="prose-md text-primary-100  text-center lg:text-center">
                 Bona Petit é a escolha de primeira linha para doces requintados
                 e inovadores em São José dos Campos. Fundada e comandada por um
                 chef excepcional, a Bona Petit destaca-se pela sua apaixonada
@@ -63,7 +63,7 @@ const Footer = async () => {
               >
                 Informações de Contato
               </h1>
-              <ul className="list-disc list-inside space-y-8">
+              <ul className="lg:list-disc list-none lg:list-inside space-y-8  text-center lg:text-center">
                 <li>
                   Avenida São João, 2200, Shopping Colinas, São José dos Campos,
                   SP.
@@ -80,7 +80,7 @@ const Footer = async () => {
               >
                 Cadastra-se
               </h1>
-              <p className="prose-md text-white">
+              <p className="prose-md text-white text-center lg:text-center">
                 Quer ser o primeiro a saber quando lançamos uma nova receita, um
                 método de confeitaria ou atualizações na plataforma? Inscreva-se
                 agora e enviaremos a você uma notificação por e-mail. Fique à
@@ -91,7 +91,7 @@ const Footer = async () => {
           </div>
         </div>
         <div className="bg-primary-950 w-full h-[80px] text-primary-500 divide-y divide-primary-200">
-          <div className="container mx-auto max-w-7xl flex items-center h-full">
+          <div className="w-full lg:container lg:mx-auto lg:max-w-7xl flex items-center lg:justify-start justify-center h-full">
             Todos os direitos reservados.
           </div>
         </div>

@@ -1,5 +1,9 @@
 import { Metadata } from 'next';
 
+import Destaques from '@/components/destaques';
+import ProdutosMenu from '@/components/produtos-menu';
+import SobreNos from '@/components/sobre-nos';
+
 export const metadata: Metadata = {
   title: 'Bona Petit: Página Inícial',
   description:
@@ -9,5 +13,11 @@ export const metadata: Metadata = {
 export default async function Home() {
   'use server';
 
-  return <main className="py-[60px]">Hi there Demo</main>;
+  return (
+    <main className="pb-[60px]">
+      <Destaques />
+      <ProdutosMenu />
+      <SobreNos />
+    </main>
+  );
 }
