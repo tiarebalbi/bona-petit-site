@@ -3,7 +3,7 @@
 }
 
 .image {
-  @apply relative z-10 h-[500px] rounded bg-cover bg-top bg-no-repeat shadow-xl;
+  @apply relative z-10 h-[500px] overflow-hidden rounded bg-cover bg-top bg-no-repeat shadow-xl;
   @apply transition-all duration-300 ease-in-out hover:z-50 hover:scale-110;
 }
 
@@ -20,5 +20,5 @@
 }
 
 .mask {
-  @apply absolute h-full w-full transition-all duration-200;
+  @apply absolute bottom-0 left-0 right-0 top-0 z-10 transition-all duration-200;
 }

@@ -79,17 +79,6 @@ const Menu = () => {
             Produtos
           </Link>
           <Link
-            href="/cursos"
-            className={classNames(
-              'text-sm transition-all duration-200 font-semibold leading-6',
-              {
-                ' text-primary-300': pathname === '/cursos',
-              }
-            )}
-          >
-            Cursos
-          </Link>
-          <Link
             href="/fale-conosco"
             className={classNames(
               'text-sm transition-all duration-200 font-semibold leading-6',
@@ -167,17 +156,6 @@ const Menu = () => {
                   )}
                 >
                   Produtos
-                </Link>
-                <Link
-                  href="/cursos"
-                  className={classNames(
-                    '-mx-3 block transition-all duration-200 rounded-lg px-3 py-2 text-base font-semibold leading-7',
-                    {
-                      ' text-primary-300': pathname === '/cursos',
-                    }
-                  )}
-                >
-                  Cursos
                 </Link>
                 <Link
                   href="/fale-conosco"

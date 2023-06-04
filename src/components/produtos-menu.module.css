@@ -1,0 +1,7 @@
+.menuItem {
+  @apply flex cursor-pointer items-center justify-between space-x-8 divide-y-reverse divide-primary-200 rounded transition-all hover:scale-110 hover:bg-primary-100 hover:p-4;
+}
+
+.image {
+  @apply relative h-24 w-24 overflow-hidden rounded-full ring ring-offset-2;
+}

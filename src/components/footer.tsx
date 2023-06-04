@@ -1,3 +1,5 @@
+import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 
 import { Playfair_Display } from 'next/font/google';
@@ -91,8 +93,24 @@ const Footer = async () => {
           </div>
         </div>
         <div className="bg-primary-950 w-full h-[80px] text-primary-500 divide-y divide-primary-200">
-          <div className="w-full lg:container lg:mx-auto lg:max-w-7xl flex items-center lg:justify-start justify-center h-full">
-            Todos os direitos reservados.
+          <div className="px-12 lg:px-0 w-full lg:container lg:mx-auto lg:max-w-7xl flex items-center justify-between flex-row h-full">
+            <div>Todos os direitos reservados.</div>
+            <div className="flex items-center space-x-8">
+              <a href="https://www.facebook.com/bonapetit.sjc" target="_blank">
+                <FontAwesomeIcon
+                  icon={faFacebook}
+                  width={32}
+                  className="hover:text-[#4267B2]"
+                />
+              </a>
+              <a href="https://www.instagram.com/bonapetit.sjc" target="_blank">
+                <FontAwesomeIcon
+                  icon={faInstagram}
+                  width={32}
+                  className="hover:text-[#C13584]"
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>
