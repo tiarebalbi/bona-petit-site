@@ -41,7 +41,7 @@ const ProdutosMenu = () => {
           theme="dark"
         />
         <div className="mb-12">
-          <ul className="divide-primary/50 divide-x flex items-center justify-center text-lg">
+          <ul className="hidden divide-primary/50 divide-x lg:flex items-center justify-center text-lg break-all">
             {menus.map((it) => (
               <li
                 key={it}
@@ -94,6 +94,16 @@ const ProdutosMenu = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="py-4 flex items-center justify-center">
+          <a
+            className={classNames(
+              playfairDisplay.className,
+              'text-lg font-medium text-primary-300 hover:text-primary-100 cursor-pointer pb-2 border-b-primary-300 italic text-center'
+            )}
+          >
+            Veja Menu Completo
+          </a>
         </div>
       </div>
     </div>

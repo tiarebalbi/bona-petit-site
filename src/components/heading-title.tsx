@@ -57,7 +57,7 @@ const HeadingTitle: React.FC<HeadingTitleProps> = ({
         <h3
           className={classNames(
             playfairDisplay.className,
-            'z-10 italic text-[130px] select-none text-center lg:text-left',
+            'z-10 italic text-[80px] lg:text-[130px] select-none text-center lg:text-left',
             {
               'text-primary-950/5': theme === 'light',
               'text-primary-100/5': theme === 'dark',
