@@ -1,15 +1,12 @@
 import classNames from 'classnames';
 
-import { Playfair_Display } from 'next/font/google';
 import Image from 'next/image';
 
 import HeadingTitle from '@/components/heading-title';
 
-import style from './produtos-menu.module.css';
+import { playfairDisplay } from '@/utils/fonts';
 
-const playfairDisplay = Playfair_Display({
-  subsets: ['latin'],
-});
+import style from './produtos-menu.module.css';
 
 const ProdutosMenu = () => {
   const menus = [

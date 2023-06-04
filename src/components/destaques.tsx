@@ -1,15 +1,10 @@
 import classNames from 'classnames';
 
-import { Playfair_Display } from 'next/font/google';
-
 import HeadingTitle from '@/components/heading-title';
 
-import style from './destaques.module.css';
+import { playfairDisplay } from '@/utils/fonts';
 
-const playfairDisplay = Playfair_Display({
-  subsets: ['latin'],
-  style: ['normal', 'italic'],
-});
+import style from './destaques.module.css';
 
 const Destaques = () => {
   const data = [

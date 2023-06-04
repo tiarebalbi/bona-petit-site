@@ -1,0 +1,22 @@
+.banner {
+  @apply relative h-[550px] bg-cover bg-top bg-no-repeat text-primary;
+  background-image: url('/background-2.jpg');
+}
+
+.mask {
+  @apply absolute bottom-0 left-0 right-0 top-0 z-0 bg-[#000]/70;
+}
+
+.content {
+  @apply absolute bottom-0 left-0 right-0 top-0 z-20 flex flex-col items-center justify-center;
+}
+
+.btn {
+  @apply rounded border-2 border-primary bg-transparent px-4 py-2 text-primary outline-primary ring-0 !important;
+  @apply select-none transition-all duration-200 hover:border-primary-200 hover:text-primary-100 !important;
+}
+
+.phone {
+  @apply absolute -left-[50px] z-30 hidden h-full -rotate-90 items-center space-x-4 lg:flex;
+  @apply select-none px-12 lg:px-0;
+}

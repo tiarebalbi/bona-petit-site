@@ -2,17 +2,15 @@ import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 
-import { Playfair_Display } from 'next/font/google';
-
 import FaleConosco from '@/components/fale-conosco';
 import Feedback from '@/components/feedback';
 import Newsletter from '@/components/newsletter';
 
 import { getUserFeedback } from '@/lib/user-feedback';
 
-import style from './footer.module.css';
+import { playfairDisplay } from '@/utils/fonts';
 
-const playfairDisplay = Playfair_Display({ subsets: ['latin'] });
+import style from './footer.module.css';
 
 const Footer = async () => {
   const result = await getUserFeedback();

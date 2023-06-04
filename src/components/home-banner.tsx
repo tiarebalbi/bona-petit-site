@@ -2,17 +2,13 @@
 
 import classNames from 'classnames';
 
-import { Playfair_Display } from 'next/font/google';
-
 import { PhoneIcon } from '@heroicons/react/24/outline';
+
+import { playfairDisplay } from '@/utils/fonts';
 
 import style from './home-banner.module.css';
 
-const playfairDisplay = Playfair_Display({
-  subsets: ['latin'],
-});
-
-const HomePageBanner = () => (
+const HomeBanner = () => (
   <div className={classNames(style.banner)}>
     <div className={style.content}>
       <h1
@@ -57,4 +53,4 @@ const HomePageBanner = () => (
   </div>
 );
 
-export default HomePageBanner;
+export default HomeBanner;

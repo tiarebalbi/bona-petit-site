@@ -4,26 +4,21 @@ import 'server-only';
 import React, { lazy } from 'react';
 
 import { Metadata } from 'next';
-import { Nunito_Sans } from 'next/font/google';
 
-import Menu from '@/components/menu';
-
-import { preload } from '@/lib/user-feedback';
+import { nunitoSans } from '@/utils/fonts';
 
 import './globals.css';
-import style from './styles.module.css';
-
-const nunitoSans = Nunito_Sans({ subsets: ['latin'] });
 
 const Footer = lazy(() => import('@/components/footer').then());
 
 interface RootLayoutProps {
   children: React.ReactNode;
-  banner: React.ReactNode;
 }
 
 export const metadata: Metadata = {
   themeColor: '#2c221c',
+  description:
+    'Descubra a Bona Petit, casa dos doces mais requintados e inovadores de São José dos Campos, comandada pelo chef e fundador, um mestre na arte da confeitaria. Embarque na sua jornada culinária, explore o revolucionário Método Milenar de Confeitaria e descubra a BP Class, nossa plataforma de confeitaria online que educa milhares de alunos ao redor do mundo. Independentemente de onde você esteja na sua aventura culinária, estamos aqui para apoiá-lo. Bem-vindo à Bona Petit, onde a confeitaria encontra a paixão e a inovação.',
   twitter: {
     title: 'Descubra a Arte da Confeitaria com a Bona Petit!',
     description:
@@ -63,20 +58,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({
-  children,
-  banner,
-}: RootLayoutProps) {
-  // Initializing user feedbacks
-  preload();
+export default async function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body className={nunitoSans.className}>
-        <header className={style.header}>
-          <Menu />
-          <div className={style.banner}>{banner}</div>
-        </header>
-        <main className={style.main}>{children}</main>
+        {children}
         <Footer />
       </body>
       <Analytics />

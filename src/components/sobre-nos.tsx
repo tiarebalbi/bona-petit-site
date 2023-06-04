@@ -1,10 +1,8 @@
 import classNames from 'classnames';
 
-import { Playfair_Display } from 'next/font/google';
+import { playfairDisplay } from '@/utils/fonts';
 
 import style from './sobre-nos.module.css';
-
-const playfairDisplay = Playfair_Display({ subsets: ['latin'] });
 
 const SobreNos = () => {
   return (

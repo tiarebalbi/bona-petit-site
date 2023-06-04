@@ -1,5 +1,6 @@
 'use client';
 
+import { Tooltip } from 'antd';
 import classNames from 'classnames';
 
 import { useState } from 'react';
@@ -13,6 +14,7 @@ import { Dialog } from '@headlessui/react';
 import {
   Bars3Icon,
   ShoppingCartIcon,
+  UserCircleIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline';
 
@@ -37,7 +39,7 @@ const Menu = () => {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-primary-200"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-primary-200 hover:text-primary-400"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Abrir menu</span>
@@ -48,7 +50,7 @@ const Menu = () => {
           <Link
             href="/"
             className={classNames(
-              'text-sm transition-all duration-200 font-semibold leading-6',
+              'text-sm transition-all duration-200 font-semibold leading-6 flex items-center justify-center h-[44px] hover:text-primary-300',
               {
                 ' text-primary-300': pathname === '/',
               }
@@ -59,7 +61,7 @@ const Menu = () => {
           <Link
             href="/sobre-nos"
             className={classNames(
-              'text-sm transition-all duration-200 font-semibold leading-6',
+              'text-sm transition-all duration-200 font-semibold leading-6 flex items-center justify-center h-[44px] hover:text-primary-300',
               {
                 ' text-primary-300': pathname === '/sobre-nos',
               }
@@ -70,7 +72,7 @@ const Menu = () => {
           <Link
             href="/produtos"
             className={classNames(
-              'text-sm transition-all duration-200 font-semibold leading-6',
+              'text-sm transition-all duration-200 font-semibold leading-6 flex items-center justify-center h-[44px] hover:text-primary-300',
               {
                 ' text-primary-300': pathname === '/produtos',
               }
@@ -81,20 +83,28 @@ const Menu = () => {
           <Link
             href="/fale-conosco"
             className={classNames(
-              'text-sm transition-all duration-200 font-semibold leading-6',
+              'text-sm transition-all duration-200 font-semibold leading-6 flex items-center justify-center h-[44px] hover:text-primary-300',
               {
                 ' text-primary-300': pathname === '/fale-conosco',
               }
             )}
           >
-            Fale Conosco
+            <span>Fale Conosco</span>
           </Link>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:flex-row items-center space-x-4">
             <a href="#" className="text-sm font-semibold leading-6 relative">
               <ShoppingCartIcon width={24} />
               <span className="absolute w-4 h-4 bg-primary-600 rounded-full flex items-center justify-center text-[10px] -right-2 -top-2">
                 0
               </span>
+            </a>
+            <a
+              href="#"
+              className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7"
+            >
+              <Tooltip title="Acesse sua Conta">
+                <UserCircleIcon width={24} />
+              </Tooltip>
             </a>
           </div>
         </div>
@@ -110,7 +120,7 @@ const Menu = () => {
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Bona Petit</span>
-              <div>Logo aqui</div>
+              <Image src={logo} alt="Bona Petit" width={120} height={60} />
             </Link>
             <button
               type="button"
@@ -169,13 +179,21 @@ const Menu = () => {
                   Fale Conosco
                 </Link>
               </div>
-              <div className="py-6">
+              <div className="py-6 divide-x-reverse flex items-center justify-end space-x-4">
                 <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7"
                 >
                   <ShoppingCartIcon width={24} />
                 </a>
+                <Tooltip title="Acesse sua Conta">
+                  <a
+                    href="#"
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7"
+                  >
+                    <UserCircleIcon width={24} />
+                  </a>
+                </Tooltip>
               </div>
             </div>
           </div>

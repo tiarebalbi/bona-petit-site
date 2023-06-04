@@ -2,14 +2,9 @@ import classNames from 'classnames';
 
 import React from 'react';
 
-import { Playfair_Display } from 'next/font/google';
-
 import { TrophyIcon } from '@heroicons/react/24/outline';
 
-const playfairDisplay = Playfair_Display({
-  subsets: ['latin'],
-  style: ['italic', 'normal'],
-});
+import { playfairDisplay } from '@/utils/fonts';
 
 export interface HeadingTitleProps {
   slogan: string;

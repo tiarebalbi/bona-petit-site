@@ -7,7 +7,7 @@
 }
 
 .sobreNos {
-  @apply z-10 py-32 lg:container lg:mx-auto lg:max-w-7xl;
+  @apply z-10 py-32 lg:container lg:mx-auto lg:max-w-7xl pb-48;
 }
 
 .content {
