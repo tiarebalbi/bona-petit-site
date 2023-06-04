@@ -3,7 +3,7 @@
 }
 
 .banner {
-  @apply relative bottom-0 top-0 z-0 h-full bg-primary-400 pt-[90px];
+  @apply relative bottom-0 top-0 z-0 h-full bg-primary-950 pt-[90px];
 }
 
 .main {

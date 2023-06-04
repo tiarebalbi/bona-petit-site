@@ -24,7 +24,7 @@ const Menu = () => {
 
   return (
     <div
-      className="fixed top-0 w-full z-30 bg-primary-950"
+      className="fixed top-0 w-full z-30 bg-primary-950 shadow-2xl"
       aria-label="Menu Bar"
     >
       <nav className="px-12 lg:px-0 h-[90px] container mx-auto max-w-7xl flex items-center justify-between">

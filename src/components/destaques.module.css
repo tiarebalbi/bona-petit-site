@@ -1,5 +1,5 @@
 .root {
-  @apply relative min-h-[600px] pb-32 pt-32;
+  @apply relative min-h-[600px] pb-32 pt-12;
 }
 
 .image {
